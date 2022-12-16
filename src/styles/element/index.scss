@@ -1,0 +1,12 @@
+// 重写element样式
+.common-layout {
+  .el-container {
+    height: 100%;
+    .project-header {
+      height: 42px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
