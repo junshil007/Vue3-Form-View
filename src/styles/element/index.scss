@@ -10,3 +10,11 @@
     }
   }
 }
+
+.center-scrollbar-view {
+  :deep {
+    .el-scrollbar__view {
+      height: 100%;
+    }
+  }
+}

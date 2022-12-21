@@ -559,7 +559,7 @@ export const layoutComponents = [
       showLabel: true,
       changeTag: true,
       labelWidth: null,
-      label: "表格[开发中]",
+      label: "表格",
       dataType: "dynamic",
       method: "get",
       dataPath: "list",
@@ -649,6 +649,7 @@ export const drawingList = [
       layout: "colFormItem",
       span: 24,
       document: "https://element.eleme.cn/#/zh-CN/component/input",
+      formId: 1,
       // 正则校验规则
       regList: [
         {
@@ -672,6 +673,5 @@ export const drawingList = [
     "show-word-limit": true,
     readonly: false,
     disabled: false,
-    formId: 1,
   },
 ];

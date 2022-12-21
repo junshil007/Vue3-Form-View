@@ -3,33 +3,36 @@
  * @Author: junshi junshi@ssc-hn.com
  * @Date: 2022-12-16 11:32:05
  * @LastEditors: junshi junshi@ssc-hn.com
- * @LastEditTime: 2022-12-16 15:10:57
+ * @LastEditTime: 2022-12-20
 -->
 <script setup lang="ts">
-  const props = defineProps(["element"]);
-  const emit = defineEmits(["activeItem"]);
+import { computed } from "@vue/runtime-core";
 
-  function domClick(element: any) {
-    emit("activeItem", element);
-  }
-  console.log(props.element);
+const props = defineProps(["element"]);
+const emit = defineEmits(["activeItem"]);
 
-  const RandomColor = () => {
-    let r, g, b;
-    r = Math.floor(Math.random() * 256);
-    g = Math.floor(Math.random() * 256);
-    b = Math.floor(Math.random() * 256);
-    return "rgb(" + r + "," + g + "," + b + ")";
-  };
+function domClick(element: any) {
+  emit("activeItem", element);
+}
+console.log(props.element);
+
+const RandomColor = computed(() => {
+  return setRandomColor()
+})
+
+const setRandomColor = () => {
+  let r, g, b;
+  r = Math.floor(Math.random() * 256);
+  g = Math.floor(Math.random() * 256);
+  b = Math.floor(Math.random() * 256);
+  return "rgb(" + r + "," + g + "," + b + ")";
+};
 </script>
 
 <template>
-  <div @click="domClick(props.element)">
+  <div @click="domClick(props.element)" :style="{ width: props.element.style?.width || null }">
     <div>{{ props.element.__config__.label }}</div>
-    <div
-      class="color-dom"
-      :style="{ background: props.element.__config__.color || RandomColor() }"
-    ></div>
+    <div class="color-dom" :style="{ background: props.element.__config__.color || RandomColor }"></div>
   </div>
 </template>
 
