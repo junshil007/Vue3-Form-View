@@ -1,3 +1,17 @@
+// 表单属性【右面板】
+export const defaultFormConf = {
+  formRef: "elForm",
+  formModel: "formData",
+  size: "medium",
+  labelPosition: "right",
+  labelWidth: 100,
+  formRules: "rules",
+  gutter: 15,
+  disabled: false,
+  span: 24,
+  formBtns: true,
+};
+
 // 输入型组件 【左面板】
 export const inputComponents = [
   {
